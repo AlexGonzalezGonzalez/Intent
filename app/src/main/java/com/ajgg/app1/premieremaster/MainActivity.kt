@@ -5,7 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-
+import org.jetbrains.anko.intentFor
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,10 +25,11 @@ class MainActivity : AppCompatActivity() {
             //Si la pantalla esta en horizontal crea una nueva activity
             //Si no lo esta cambia el texto del boton a `vertical´
             if(horizontal){
-                val intent = Intent(this, Activity2::class.java).apply {
-                    putExtra("id", 5)
-                }
-                startActivity(intent)
+                //val intent = Intent(this, Activity2::class.java).apply {
+                //    putExtra("id", 5)
+                //}
+                //startActivity(intent)
+                startActivity(intentFor<Activity2>("id" to 5))
 
             }else{
                 id_boton.setText("VERTICAL")
